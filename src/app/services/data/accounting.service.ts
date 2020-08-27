@@ -29,7 +29,7 @@ export class AccountingService {
     sessionStorage.removeItem('userId');
   }
 
-  registraUtente(cliente: Cliente, account: AccountCliente){
-    return this.httpClient.post<Cliente>(`http://${this.server}:${this.port}/accounting/registra_utente/${account.username}/${account.password}`, cliente);
+  registraUtente(cliente: Cliente, password: string){
+    return this.httpClient.post<AccountCliente>(`http://${this.server}:${this.port}/accounting/registra_utente/${password}`, cliente);
   }
 }

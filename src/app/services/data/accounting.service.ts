@@ -30,6 +30,6 @@ export class AccountingService {
   }
 
   registraUtente(cliente: Cliente, password: string){
-    return this.httpClient.post<AccountCliente>(`http://${this.server}:${this.port}/accounting/registra_utente/${password}`, cliente);
+    return this.httpClient.post<AccountCliente>(`http://${this.server}:${this.port}/accounting/registra_cliente/${password}`, cliente);
   }
 }

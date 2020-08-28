@@ -42,7 +42,7 @@
           </a>
         </div>
       </div>
-      <a class="navbar-item" *ngIf="userLogged">
+      <a class="navbar-item" routerLink="/dashboard" *ngIf="accounting.isLogged()">
         Dashboard
       </a>
     </div>
@@ -50,13 +50,13 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-info text-decoration-none" routerLink="/registrazione" *ngIf="!userLogged">
+          <a class="button is-info text-decoration-none" routerLink="/registrazione" *ngIf="!accounting.isLogged()">
             <strong>Registrati</strong>
           </a>
-          <a class="button is-info is-light text-decoration-none" routerLink="/login" *ngIf="!userLogged">
+          <a class="button is-info is-light text-decoration-none" routerLink="/login" *ngIf="!accounting.isLogged()">
             Log in
           </a>
-          <a class="button is-info is-light text-decoration-none" routerLink="/home" *ngIf="userLogged">
+          <a class="button is-info is-light text-decoration-none" (click)="accounting.logoutUser()" routerLink="/home" *ngIf="accounting.isLogged()">
             Logout
           </a>
         </div>

@@ -1,0 +1,11 @@
+<div class="field">
+  <label class="label">Ricerca una spedizione!</label>
+  <div class="control form-row text-center">
+
+    <input class="input col-md-9 ml-auto " type="text" placeholder="Codice spedizione" [(ngModel)]="codiceSpedizione">
+    <button class="button btn-success ml-1 mr-auto col-md-2 disabled" *ngIf="!codiceSpedizione">Cerca</button>
+    <button class="button btn-success ml-1 mr-auto col-md-2" (click)="ricerca()" *ngIf="codiceSpedizione">Cerca</button>
+  </div>
+  <p class="help">{{msg}}</p>
+<!--  <p class="help" style="color: red" *ngIf="error">{{error}}</p>-->
+</div>

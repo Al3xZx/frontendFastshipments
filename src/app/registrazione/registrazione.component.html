@@ -5,14 +5,22 @@
   <div class="column">
     <div class="h1 mb-5">Registrazione</div>
 
-    <app-msg-err [msg]="errRegistrazione" *ngIf="errRegistrazione"></app-msg-err>
+    <div *ngIf="errRegistrazione">
+      <app-msg-err [msg]="errRegistrazione" ></app-msg-err>
+      <button class="button is-success " (click)="errRegistrazione=null">OK!</button>
+    </div>
+
 
     <div *ngIf="succReg">
       <app-msg-suc [msg]="succReg"></app-msg-suc>
       <button class="btn btn-success" routerLink="/login">Vai al Login</button>
     </div>
 
+    <div *ngIf="succReg">
+      <h1>Il codice cliente è {{this.accountCliente.username.idCliente}}</h1>
+    </div>
 
+  <div *ngIf="!succReg">
     <div class="form-row">
       <label for="radio" class="mr-2">Tipo cliente</label>
       <div id="radio" class="radio mr-2">
@@ -128,8 +136,7 @@
     this.password && this.ripPsw &&this.email && this.telefono && this.regione && this.citta && this.provincia && this.via && this.civico)">
         Registrati</div>
     </form>
-
   </div>
-
+  </div>
   <div class="column is-one-fifth"></div>
 </div>

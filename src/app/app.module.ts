@@ -14,6 +14,8 @@ import { MsgErrComponent } from './msg-err/msg-err.component';
 import { MsgSucComponent } from './msg-suc/msg-suc.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {HttpClientModule} from '@angular/common/http';
+import { RicercaSpedizioneComponent } from './ricerca-spedizione/ricerca-spedizione.component';
+import { InfoSpedizioneComponent } from './info-spedizione/info-spedizione.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import {HttpClientModule} from '@angular/common/http';
     RegistrazioneComponent,
     MsgErrComponent,
     MsgSucComponent,
-    DashboardComponent
+    DashboardComponent,
+    RicercaSpedizioneComponent,
+    InfoSpedizioneComponent
   ],
   imports: [
     BrowserModule,

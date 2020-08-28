@@ -11,11 +11,10 @@ import {AccountCliente, Cliente} from '../support-class/ClassiSupporto';
 export class LoginComponent implements OnInit {
   errMsg: string;
 
-  utenteLoggato: Cliente;
+  clienteLoggato: Cliente;
 
-
-  username: Cliente;
   password='';
+  codCliente: number;
 
   constructor(private autenticazione: AccountingService, private router: Router) { }
 
@@ -23,17 +22,19 @@ export class LoginComponent implements OnInit {
   }
 
   accedi() {//todo da sistemare
-    // this.autenticazione.autentica(new AccountCliente(this.username,this.password)).subscribe(
-    //   response => {
-    //     this.utenteLoggato = response;
-    //     sessionStorage.setItem("userId", this.utenteLoggato.idCliente.toString());
-    //     this.router.navigate(["/dashboard"])
-    //
-    //   },
-    //   error =>{
-    //     this.errMsg = "errore di autenticazione, riprova ad inserire i dati!";
-    //     setTimeout( ()=>{this.errMsg = null }, 2500);
-    //   }
-    // )
+    var cliente = new Cliente(null, null, null,null,null,null,null,null);
+    cliente.idCliente=this.codCliente;
+    this.autenticazione.autentica(new AccountCliente(cliente,this.password)).subscribe(
+      response => {
+        this.clienteLoggato = response;
+        sessionStorage.setItem("userId", this.clienteLoggato.idCliente.toString());
+        this.router.navigate(["/dashboard"])
+
+      },
+      error =>{
+        this.errMsg = "errore di autenticazione, riprova ad inserire i dati!";
+        setTimeout( ()=>{this.errMsg = null }, 2500);
+      }
+    )
   }
 }

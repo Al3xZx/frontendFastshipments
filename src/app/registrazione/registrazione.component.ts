@@ -45,6 +45,10 @@ export class RegistrazioneComponent implements OnInit {
   registra() {
     var indirizzo = new Indirizzo(this.regione, this.citta, this.provincia, this.via, this.civico, this.nome, this.cognome);
     var cliente = new Cliente(this.telefono, this.email, this.ragioneSociale, this.pIva, this.cf, this.nome, this.cognome, indirizzo);
+    if (this.password !== this.ripPsw){
+      this.errRegistrazione = "le password non coincidono";
+      return;
+    }
     this.account.registraUtente(cliente,this.password).subscribe(
       response => {
         console.log(response);
@@ -52,6 +56,7 @@ export class RegistrazioneComponent implements OnInit {
         this.succReg = "registrazione avvenuta con successo!"
       },error => {
         this.errRegistrazione = error.error.message;
+        //setTimeout( ()=>{this.errRegistrazione = null }, 5000);
       }
     )
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AccountingService} from '../services/data/accounting.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  userLogged = false;
+  //userLogged = false;
 
-  constructor() { }
+  constructor(public accounting: AccountingService) { }
 
   ngOnInit(): void {
   }

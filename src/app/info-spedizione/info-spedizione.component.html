@@ -1,0 +1,50 @@
+<div class="text-center" *ngIf="error">
+  <app-msg-err [msg]="error" ></app-msg-err>
+  <button class="button is-success w-50 mb-6" (click)="error=null" routerLink="/home">OK!</button>
+</div>
+
+<div class="columns" *ngIf="spedizione">
+  <div class="column"></div>
+
+  <div class="column col-md-8 mt-6 mb-6">
+    <article class="panel is-info">
+    <p class="panel-heading">
+      Spedizione numero: {{this.spedizione.idSpedizione}}
+    </p>
+<!--    <p class="panel-tabs">-->
+<!--      <a class="is-active">All</a>-->
+<!--      <a>Public</a>-->
+<!--      <a>Private</a>-->
+<!--      <a>Sources</a>-->
+<!--      <a>Forks</a>-->
+<!--    </p>-->
+<!--    <div class="panel-block">-->
+<!--      <p class="has-icons-left">-->
+<!--        <input class="input is-info" type="text" placeholder="Search">-->
+<!--        <span class="icon is-left">-->
+<!--        <i class="fas fa-search" aria-hidden="true"></i>-->
+<!--      </span>-->
+<!--      </p>-->
+<!--    </div>-->
+      <div *ngIf="spedizione.stato !== 'DA_RITIRARE'">
+
+        <div class="panel-block">
+          partenza
+        </div>
+        <div class="panel-block">
+          partenza
+        </div>
+
+      </div>
+      <div *ngIf="spedizione.stato === 'DA_RITIRARE'">
+        <div class="panel-block alert alert-warning">
+          La spedizione non è stata ancora ritirata
+        </div>
+      </div>
+  </article>
+
+  </div><!--colonna centrale-->
+
+  <div class="column"></div>
+
+</div>

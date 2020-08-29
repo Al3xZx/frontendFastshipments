@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +16,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {HttpClientModule} from '@angular/common/http';
 import { RicercaSpedizioneComponent } from './ricerca-spedizione/ricerca-spedizione.component';
 import { InfoSpedizioneComponent } from './info-spedizione/info-spedizione.component';
+import { ProfiloAziendaleComponent } from './profilo-aziendale/profilo-aziendale.component';
+import { ContattiComponent } from './contatti/contatti.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { InfoSpedizioneComponent } from './info-spedizione/info-spedizione.compo
     MsgSucComponent,
     DashboardComponent,
     RicercaSpedizioneComponent,
-    InfoSpedizioneComponent
+    InfoSpedizioneComponent,
+    ProfiloAziendaleComponent,
+    ContattiComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,9 @@ import { InfoSpedizioneComponent } from './info-spedizione/info-spedizione.compo
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+   // {provide: LOCALE_ID, useValue: 'fr-FR'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,7 +7,7 @@ export class Indirizzo {
   public via: string;
   public civico: string;
 
-  constructor(regione: string, citta: string, provincia: string, via: string, civico: string, nome: string, cognome: string) {
+  constructor(regione: string, citta: string, provincia: string,nome: string, cognome: string, via: string, civico: string) {
     this.regione=regione;
     this.citta=citta;
     this.provincia=provincia;
@@ -217,7 +217,7 @@ export class Fattura{
   constructor() {}
 }
 
-class IndirizzoHub {
+export class IndirizzoHub {
 
   public regione: string;
   public citta: string;
@@ -236,7 +236,8 @@ class IndirizzoHub {
 
 export class Hub{
   public idHub: number
-  public indirizzo: IndirizzoHub;
+  public indirizzoHub: IndirizzoHub;
+  public indirizzo: string;
   public telefono: string
   public volumeTotale: number
   public volumeDisponibile: number

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SpedizioneService} from '../services/data/spedizione.service';
-import {Spedizione} from '../support-class/ClassiSupporto';
+import {Indirizzo, Spedizione} from '../support-class/ClassiSupporto';
 import {Router} from '@angular/router';
 
 
@@ -35,4 +35,12 @@ export class InfoSpedizioneComponent implements OnInit {
     )
   }
 
+  prelevaIndirizzi() {
+    var indirizzoS = this.spedizione.indirizzoDestinatario;
+    var arSplit = indirizzoS.split(/\s?[a-zA-Z]+:\s/);
+    //console.log(indirizzoS)
+    this.spedizione.indirizzoDestinazione = new Indirizzo(arSplit[1],arSplit[2],arSplit[3],arSplit[4],arSplit[5],arSplit[6],arSplit[7])
+    arSplit= this.spedizione.mittente.indirizzo.split(/\s?[a-zA-Z]+:\s/);
+    this.spedizione.mittente.indirizzoCliente = new Indirizzo(arSplit[1],arSplit[2],arSplit[3],arSplit[4],arSplit[5],arSplit[6],arSplit[7]);
+  }
 }

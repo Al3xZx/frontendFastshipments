@@ -54,10 +54,10 @@
             <strong>Registrati</strong>
           </a>
           <a class="button is-info is-light text-decoration-none" routerLink="/login" *ngIf="!accounting.isLogged()">
-            Log in
+            Accedi
           </a>
           <a class="button is-info is-light text-decoration-none" (click)="accounting.logoutUser()" routerLink="/home" *ngIf="accounting.isLogged()">
-            Logout
+            Esci
           </a>
         </div>
       </div>

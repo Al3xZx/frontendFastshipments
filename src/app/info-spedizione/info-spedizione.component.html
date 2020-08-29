@@ -9,33 +9,54 @@
   <div class="column col-md-8 mt-6 mb-6">
     <article class="panel is-info">
     <p class="panel-heading">
-      Spedizione numero: {{this.spedizione.idSpedizione}}
+      Spedizione numero {{this.spedizione.idSpedizione}}
     </p>
-<!--    <p class="panel-tabs">-->
-<!--      <a class="is-active">All</a>-->
-<!--      <a>Public</a>-->
-<!--      <a>Private</a>-->
-<!--      <a>Sources</a>-->
-<!--      <a>Forks</a>-->
-<!--    </p>-->
-<!--    <div class="panel-block">-->
-<!--      <p class="has-icons-left">-->
-<!--        <input class="input is-info" type="text" placeholder="Search">-->
-<!--        <span class="icon is-left">-->
-<!--        <i class="fas fa-search" aria-hidden="true"></i>-->
-<!--      </span>-->
-<!--      </p>-->
-<!--    </div>-->
       <div *ngIf="spedizione.stato !== 'DA_RITIRARE'">
 
         <div class="panel-block">
-          partenza
+          <div class="columns">
+            <div class="column col-md-10">
+              <h5>Indirizzo destinazione{{prelevaIndirizzi()}}</h5>
+              <h6>Regione: {{this.spedizione.indirizzoDestinazione.regione}}</h6>
+              <h6>Città: {{this.spedizione.indirizzoDestinazione.citta}}</h6>
+              <h6>Provincia: {{this.spedizione.indirizzoDestinazione.provincia}}</h6>
+              <h6>Via: {{this.spedizione.indirizzoDestinazione.via}}</h6>
+              <h6>Civico: {{this.spedizione.indirizzoDestinazione.civico}}</h6>
+              <h6>Nome destinatario: {{this.spedizione.indirizzoDestinazione.nome}}</h6>
+              <h6 *ngIf="this.spedizione.indirizzoDestinazione.cognome">Cognome destinatario: {{this.spedizione.indirizzoDestinazione.cognome}}</h6>
+            </div>
+            <div class="column col-md-10">
+              <h5 *ngIf="!spedizione.mittente.ragioneSociale">Mittente: {{spedizione.mittente.nome}} {{spedizione.mittente.cognome}}</h5>
+              <h5 *ngIf="spedizione.mittente.ragioneSociale">Mittente: {{spedizione.mittente.ragioneSociale}}</h5>
+              <h6>Regione: {{this.spedizione.mittente.indirizzoCliente.regione}}</h6>
+              <h6>Città: {{this.spedizione.mittente.indirizzoCliente.citta}}</h6>
+              <h6>Provincia: {{this.spedizione.mittente.indirizzoCliente.provincia}}</h6>
+              <h6>Via: {{this.spedizione.mittente.indirizzoCliente.via}}</h6>
+              <h6>Civico: {{this.spedizione.mittente.indirizzoCliente.civico}}</h6>
+            </div>
+          </div>
         </div>
         <div class="panel-block">
-          partenza
+          <div>
+            <h6>Hub di partenza: {{spedizione.hubPartenza.indirizzo}}</h6>
+            <h6 *ngIf="this.spedizione.dataPartenza">Data partenza: {{this.spedizione.dataPartenza  | date : 'fullDate'}} at {{this.spedizione.dataPartenza  | date : 'mediumTime'}}</h6>
+          </div>
         </div>
 
+        <div class="panel-block" *ngIf="spedizione.stato ==='IN_CONSEGNA'">
+          <div>
+            <h6>Hub di destinazione: {{spedizione.hubDestinazione.indirizzo}}</h6>
+            <h6 *ngIf="this.spedizione.dataArrivo">Data arrivo <strong>(prevista)</strong>: {{this.spedizione.dataArrivo  | date : 'fullDate'}} at {{this.spedizione.dataArrivo  | date : 'mediumTime'}}</h6>
+            <strong>Per modificare la data di consegna <a routerLink="/contatti">contattaci</a></strong>
+          </div>
+        </div>
+        <div class="panel-block" *ngIf="spedizione.stato ==='CONSEGNATA'">
+          <div>
+            <strong>CONSEGNATA</strong>
+          </div>
+        </div>
       </div>
+
       <div *ngIf="spedizione.stato === 'DA_RITIRARE'">
         <div class="panel-block alert alert-warning">
           La spedizione non è stata ancora ritirata

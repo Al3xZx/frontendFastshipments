@@ -2,51 +2,53 @@
 <!--style="border: 1px solid black"-->
 <div class="columns">
   <div class="column"></div>
-  <div class="column col-md-6 mt-6 text-center has-background-light" style="height: 150px; border-radius: 20px">
+  <div class="column col-md-6 mt-6 text-center has-background-light panel" style="height: 150px; border-radius: 20px">
     <app-ricerca-spedizione></app-ricerca-spedizione>
   </div>
-  <div class="column is-one-third">
-   <app-login></app-login>
+  <div class="column col-md-4">
+    <div class="panel has-background-light mr-3 mt-4 ml-3" style="border-radius: 20px">
+      <app-login></app-login>
+    </div>
   </div>
 </div>
 
-<div class="columns">
+<div class="columns mb-6">
   <div class="column is-one-fifth"></div>
 
   <div class="column is-one-fifth">
     <div class="card">
       <div class="card-image">
         <figure class="image">
-          <img src="assets/images/home_contattaci_434x435.jpg" alt="Placeholder image">
+          <img src="assets/images/camion_tir_italia_tradus.jpg" alt="Placeholder image">
         </figure>
       </div>
       <div class="card-content has-text-centered">
-        <button class="button is-info is-light is-bold"> Profilo aziendale </button>
+        <strong class="button is-info is-light is-bold" routerLink="/profilo"> Profilo aziendale </strong>
       </div>
     </div>
   </div>
 
-  <div class="column is-one-fifth">
-    <div class="card">
+  <div class="column is-one-fifth" >
+    <div class="card" >
       <div class="card-image">
         <figure class="image">
           <img src="assets/images/lavora-con-noi-img.jpg" alt="Placeholder image">
         </figure>
       </div>
       <div class="card-content has-text-centered">
-        <button class="button is-info is-light is-bold"> Lavora con noi </button>
+        <strong class="button is-info is-light mt-auto mb-auto" routerLink="/lavoraConNoi"> Lavora con noi </strong>
       </div>
     </div>
   </div>
-  <div class="column is-one-fifth">
+  <div class="column is-one-fifth" >
     <div class="card">
       <div class="card-image">
         <figure class="image">
           <img src="assets/images/home_contattaci_434x435.jpg" alt="Placeholder image">
         </figure>
       </div>
-      <div class="card-content has-text-centered">
-        <button class="button is-info is-light is-bold"> Contattaci </button>
+      <div class="card-content has-text-centered" >
+        <strong class="button is-info is-light is-bold mt-auto mb-auto" routerLink="/contatti"> Contattaci </strong>
       </div>
     </div>
   </div>

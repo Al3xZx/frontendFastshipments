@@ -1,0 +1,15 @@
+<div class="mb-6 mt-6" style="margin-left: 15%">
+  <h1>Scegli l'hub più vicino a te!</h1>
+  <div style="margin-right: 45%">
+    <ul class="list-group" *ngFor="let hub of this.hubs">
+      <a class="list-group-item list-group-item-action mt-3 mb-3" >{{this.prelevaIndirizzi(hub)}}
+        <h6>Regione: {{hub.indirizzoHub.regione}}</h6>
+        <h6>Città: {{hub.indirizzoHub.citta}}</h6>
+        <h6>Provincia: {{hub.indirizzoHub.provincia}}</h6>
+        <h6>Via: {{hub.indirizzoHub.via}}</h6>
+        <h6>Civico: {{hub.indirizzoHub.civico}}</h6>
+        <div class="float-right">Tel: <a style="color: dodgerblue">{{hub.telefono}}</a></div>
+      </a>
+    </ul>
+  </div>
+</div>

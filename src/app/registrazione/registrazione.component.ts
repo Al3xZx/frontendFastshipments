@@ -43,7 +43,7 @@ export class RegistrazioneComponent implements OnInit {
   }
 
   registra() {
-    var indirizzo = new Indirizzo(this.regione, this.citta, this.provincia, this.via, this.civico, this.nome, this.cognome);
+    var indirizzo = new Indirizzo(this.regione, this.citta, this.provincia, this.nome, this.cognome,this.via, this.civico);
     var cliente = new Cliente(this.telefono, this.email, this.ragioneSociale, this.pIva, this.cf, this.nome, this.cognome, indirizzo);
     if (this.password !== this.ripPsw){
       this.errRegistrazione = "le password non coincidono";

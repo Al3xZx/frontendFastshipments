@@ -254,3 +254,27 @@ export class Hub{
   }
 }
 
+export class Candidato {
+  public idCandidato: number;
+  public nome: string;
+  public cognome: string;
+  public dataNascita: string;
+  public luogoNascita: string;
+  public CF: string;
+  public titoloStudio: string;
+  public indirizzoCandidato: Indirizzo;
+  public indirizzo: string
+  public annuncio: Annuncio;
+
+  constructor(){}
+}
+
+export class Annuncio{
+  public idAnnuncio: number;
+  public descrizione: string;
+  public addettoUR: Dipendente;
+  public  candidati: Candidato[];
+
+  constructor(){}
+}
+

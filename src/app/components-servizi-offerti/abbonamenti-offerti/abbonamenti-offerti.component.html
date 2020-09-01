@@ -1,0 +1,7 @@
+<div *ngIf="abbonamentiDisponibili">
+  <div class="row">
+    <div *ngFor="let a of abbonamentiDisponibili" class="col">
+      <app-abbonamento [abbonamento]="a"></app-abbonamento>
+    </div>
+  </div>
+</div>

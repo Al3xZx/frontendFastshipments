@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Annuncio} from '../support-class/ClassiSupporto';
-import {AnnunciService} from '../services/data/annunci.service';
+import {Annuncio} from '../../support-class/ClassiSupporto';
+import {AnnunciService} from '../../services/data/annunci.service';
 
 @Component({
   selector: 'app-annunci',

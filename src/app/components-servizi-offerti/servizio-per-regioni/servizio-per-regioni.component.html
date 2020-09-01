@@ -1,0 +1,9 @@
+<h2>Il servizio è erogato da e per le seguenti regioni</h2>
+<br>
+<div>
+  <ul *ngFor="let hub of this.hubs">
+    <li>{{this.prelevaIndirizzo(hub)}}
+      <h5>{{hub.indirizzoHub.regione}}</h5>
+    </li>
+  </ul>
+</div>

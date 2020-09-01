@@ -1,20 +1,11 @@
 /* The sidebar menu */
 .sidenav {
-  /*height: 100%; !* Full-height: remove this if you want "auto" height *!*/
-  /*width: 160px; !* Set the width of the sidebar *!*/
-  /*position: fixed; !* Fixed Sidebar (stay in place on scroll) *!*/
-  /*z-index: 1; !* Stay on top *!*/
-  /*top: 0; !* Stay at the top *!*/
-  /*left: 0;*/
-  background-color: lightgray; /* Black */
-  /*overflow-x: hidden; !* Disable horizontal scroll *!*/
-  /*padding-top: 20px;*/
+  background-color: lightgray;
 }
 
 /* The navigation menu links */
 .sidenav a {
   padding: 6px 8px 6px 16px;
-  /*font-weight: bold;*/
   font-size: 20px;
   color: dodgerblue;
   display: block;
@@ -24,11 +15,13 @@
 .sidenav a:hover {
   color: gray;
 }
+
 .titlePage{
   font-weight: bold;
   color: black;
   text-decoration: none;
 }
+
 p{
   font-size: 20px;
 }

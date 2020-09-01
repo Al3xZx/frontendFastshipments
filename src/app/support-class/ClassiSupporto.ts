@@ -19,7 +19,7 @@ export class Indirizzo {
 
 }
 
-class Abbonamento {
+export class Abbonamento {
   public idAbbonamento: number;
   public costo: number;
   public descrizione: string;
@@ -179,7 +179,7 @@ export class AreaDiCompetenza{
 
 }
 
-class AbbonamentoMagazzino {
+export class AbbonamentoMagazzino {
   public idAbbonamento: number;
   public costo: number;
   public descrizione: string;

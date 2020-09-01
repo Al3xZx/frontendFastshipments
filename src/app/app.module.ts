@@ -6,21 +6,28 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { ErrorComponent } from './error/error.component';
-import { LoginComponent } from './login/login.component';
-import { RegistrazioneComponent } from './registrazione/registrazione.component';
+import { ErrorComponent } from './components-message/error/error.component';
+import { LoginComponent } from './components-accounting/login/login.component';
+import { RegistrazioneComponent } from './components-accounting/registrazione/registrazione.component';
 import {FormsModule} from '@angular/forms';
-import { MsgErrComponent } from './msg-err/msg-err.component';
-import { MsgSucComponent } from './msg-suc/msg-suc.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { MsgErrComponent } from './components-message/msg-err/msg-err.component';
+import { MsgSucComponent } from './components-message/msg-suc/msg-suc.component';
+import { DashboardComponent } from './components-dashboard/dashboard/dashboard.component';
 import {HttpClientModule} from '@angular/common/http';
 import { RicercaSpedizioneComponent } from './ricerca-spedizione/ricerca-spedizione.component';
 import { InfoSpedizioneComponent } from './info-spedizione/info-spedizione.component';
 import { ProfiloAziendaleComponent } from './profilo-aziendale/profilo-aziendale.component';
 import { ContattiComponent } from './contatti/contatti.component';
-import { HomeLavoraConNoiComponent } from './home-lavora-con-noi/home-lavora-con-noi.component';
-import { AnnunciComponent } from './annunci/annunci.component';
-import { CandidaturaAnnuncioComponent } from './candidatura-annuncio/candidatura-annuncio.component';
+import { HomeLavoraConNoiComponent } from './components-lavora-con-noi/home-lavora-con-noi/home-lavora-con-noi.component';
+import { AnnunciComponent } from './components-lavora-con-noi/annunci/annunci.component';
+import { CandidaturaAnnuncioComponent } from './components-lavora-con-noi/candidatura-annuncio/candidatura-annuncio.component';
+import { ServiziOffertiHomeComponent } from './components-servizi-offerti/servizi-offerti-home/servizi-offerti-home.component';
+import { AbbonamentiOffertiComponent } from './components-servizi-offerti/abbonamenti-offerti/abbonamenti-offerti.component';
+import { AbbonamentiMagazzinoOffertiComponent } from './components-servizi-offerti/abbonamenti-magazzino-offerti/abbonamenti-magazzino-offerti.component';
+import { ServizioPerRegioniComponent } from './components-servizi-offerti/servizio-per-regioni/servizio-per-regioni.component';
+import { AbbonamentoComponent } from './components-servizi-offerti/abbonamento/abbonamento.component';
+import { AbbonamentoMagazzinoComponent } from './components-servizi-offerti/abbonamento-magazzino/abbonamento-magazzino.component';
+import { PagamentoComponent } from './components-sottoscrizione/pagamento/pagamento.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +47,14 @@ import { CandidaturaAnnuncioComponent } from './candidatura-annuncio/candidatura
     ContattiComponent,
     HomeLavoraConNoiComponent,
     AnnunciComponent,
-    CandidaturaAnnuncioComponent
+    CandidaturaAnnuncioComponent,
+    ServiziOffertiHomeComponent,
+    AbbonamentiOffertiComponent,
+    AbbonamentiMagazzinoOffertiComponent,
+    ServizioPerRegioniComponent,
+    AbbonamentoComponent,
+    AbbonamentoMagazzinoComponent,
+    PagamentoComponent
   ],
   imports: [
     BrowserModule,

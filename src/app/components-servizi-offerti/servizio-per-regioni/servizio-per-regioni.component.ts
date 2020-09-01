@@ -1,13 +1,13 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Hub, IndirizzoHub} from '../support-class/ClassiSupporto';
-import {AbbonamentoMagazzinoService} from '../services/data/abbonamento-magazzino.service';
+import { Component, OnInit } from '@angular/core';
+import {Hub, IndirizzoHub} from '../../support-class/ClassiSupporto';
+import {AbbonamentoMagazzinoService} from '../../services/data/abbonamento-magazzino.service';
 
 @Component({
-  selector: 'app-contatti',
-  templateUrl: './contatti.component.html',
-  styleUrls: ['./contatti.component.css']
+  selector: 'app-servizio-per-regioni',
+  templateUrl: './servizio-per-regioni.component.html',
+  styleUrls: ['./servizio-per-regioni.component.css']
 })
-export class ContattiComponent implements OnInit {
+export class ServizioPerRegioniComponent implements OnInit {
 
   hubs : Hub[]
 
@@ -21,13 +21,13 @@ export class ContattiComponent implements OnInit {
     this.abbonamentoMagazzinoService.hubDisponibili().subscribe(
       response =>{
         this.hubs = response;
-    },error => {
+      },error => {
 
       }
     )
   }
 
-  prelevaIndirizzi(h: Hub) {
+  prelevaIndirizzo(h: Hub) {
     var indirizzoHubS = h.indirizzo;
     var arSplit = indirizzoHubS.split(/\s?[a-zA-Z]+:\s/);
     h.indirizzoHub = new IndirizzoHub(arSplit[1],arSplit[2],arSplit[3],arSplit[4],arSplit[5]);

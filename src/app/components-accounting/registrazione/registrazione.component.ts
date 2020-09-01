@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AccountCliente, Cliente, Indirizzo} from '../support-class/ClassiSupporto';
-import {AccountingService} from '../services/data/accounting.service';
+import {AccountCliente, Cliente, Indirizzo} from '../../support-class/ClassiSupporto';
+import {AccountingService} from '../../services/data/accounting.service';
 
 @Component({
   selector: 'app-registrazione',

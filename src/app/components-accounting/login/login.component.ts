@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AccountingService} from '../services/data/accounting.service';
+import {AccountingService} from '../../services/data/accounting.service';
 import {Router} from '@angular/router';
-import {AccountCliente, Cliente} from '../support-class/ClassiSupporto';
+import {AccountCliente, Cliente} from '../../support-class/ClassiSupporto';
 
 @Component({
   selector: 'app-login',

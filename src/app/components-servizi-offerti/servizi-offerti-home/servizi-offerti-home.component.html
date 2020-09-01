@@ -1,0 +1,29 @@
+<div class="columns mt-6 mb-6">
+
+  <div class="column is-one-quarter ml-2">
+    <div class="sidenav panel has-background-light">
+      <ul>
+        <li><a (click)="selMenu = 0">Servizi offerti</a></li>
+        <li><a (click)="selMenu = 1">Abbonamenti disponibili</a></li>
+        <li><a (click)="selMenu = 2">Abbonamenti  magazzino disponibili</a></li>
+        <li *ngIf="accountingService.isLogged()">
+          <a (click)="selMenu = 3">Effettua una Spedizione</a>
+        </li>
+        <li><a (click)="selMenu = 4">Disponibilità servizio per regione</a></li>
+        <br> <br> <br> <br> <br>
+        <li><a class="text-decoration-none" routerLink="/home">Esci</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="column ml-2 mr-2">
+    <h3 *ngIf="selMenu === 0" class="titlePage">Consulta la nostra tipologia di abbonamenti navigando sulla barra laterale</h3>
+    <h3 *ngIf="selMenu === 1" class="titlePage">Abbonamenti disponibili</h3>
+    <h3 *ngIf="selMenu === 2" class="titlePage">Abbonamenti  magazzino disponibili</h3>
+    <h3 *ngIf="selMenu === 3" class="titlePage">Effettua una Spedizione</h3>
+    <h3 *ngIf="selMenu === 4" class="titlePage">Disponibilità servizio per regione</h3>
+    <app-abbonamenti-offerti *ngIf="selMenu === 1"></app-abbonamenti-offerti>
+    <app-abbonamenti-magazzino-offerti *ngIf="selMenu === 2"></app-abbonamenti-magazzino-offerti>
+    <app-servizio-per-regioni *ngIf="selMenu === 4"></app-servizio-per-regioni>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<div *ngIf="abbonamentiDisponibili">
+  <div class="row">
+    <div *ngFor="let a of abbonamentiDisponibili; let i = index" class="col">
+      <app-abbonamento-magazzino [abbonamento]="a"></app-abbonamento-magazzino>
+    </div>
+  </div>
+</div>

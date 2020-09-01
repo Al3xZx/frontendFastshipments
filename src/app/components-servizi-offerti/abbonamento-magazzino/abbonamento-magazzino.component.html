@@ -1,0 +1,11 @@
+<div class="panel abbonamento mr-2 mt-2 ml-2 mb-2">
+  <div class="panel-block">Descrizione: {{abbonamento.descrizione}}</div>
+  <div class="panel-block">Durata (in giorni): {{abbonamento.durata}}</div>
+  <div class="panel-block">Prezzo: {{abbonamento.costo}}€</div>
+  <div class="panel-block">Numero di spedizioni: {{abbonamento.numeroSpedizioni}}</div>
+  <div class="panel-block">Volume disponibile: {{abbonamento.volumeDisponibile}}</div>
+  <div class="panel-block">
+    <a class="button is-success float-right mt-2 mr-2 mb-2" (click)="sottoscrivi()">Sottoscrivi</a>
+  </div>
+  <app-msg-err *ngIf="errMsg" [msg]="errMsg" style="font-size: 10px" class="panel-block"></app-msg-err>
+</div>

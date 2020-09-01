@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Abbonamento} from '../../support-class/ClassiSupporto';
 import {AccountingService} from '../../services/data/accounting.service';
 import {AbbonamentoService} from '../../services/data/abbonamento.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-abbonamento',
@@ -13,7 +14,9 @@ export class AbbonamentoComponent implements OnInit {
   @Input() abbonamento: Abbonamento
   errMsg: string;
 
-  constructor(private accountingService: AccountingService, private abbonamentoService: AbbonamentoService) { }
+  constructor(private accountingService: AccountingService,
+              private abbonamentoService: AbbonamentoService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -21,8 +24,8 @@ export class AbbonamentoComponent implements OnInit {
   sottoscrivi() {
     if(!this.accountingService.isLogged()) this.errMsg = "è necessario essere registrato per sottoscrivere un abbonamento"
     else{
-      sessionStorage.setItem("idAbbonamento", this.abbonamento.idAbbonamento.toString());
-
+      sessionStorage.setItem("ID_ABBONAMENTO", this.abbonamento.idAbbonamento.toString());
+      this.router.navigate(["/riepilogoOrdine"]);
     }
   }
 }

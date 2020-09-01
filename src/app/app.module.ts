@@ -28,6 +28,7 @@ import { ServizioPerRegioniComponent } from './components-servizi-offerti/serviz
 import { AbbonamentoComponent } from './components-servizi-offerti/abbonamento/abbonamento.component';
 import { AbbonamentoMagazzinoComponent } from './components-servizi-offerti/abbonamento-magazzino/abbonamento-magazzino.component';
 import { PagamentoComponent } from './components-sottoscrizione/pagamento/pagamento.component';
+import { RiepilogoComponent } from './components-sottoscrizione/riepilogo/riepilogo.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { PagamentoComponent } from './components-sottoscrizione/pagamento/pagame
     ServizioPerRegioniComponent,
     AbbonamentoComponent,
     AbbonamentoMagazzinoComponent,
-    PagamentoComponent
+    PagamentoComponent,
+    RiepilogoComponent
   ],
   imports: [
     BrowserModule,

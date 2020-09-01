@@ -11,8 +11,8 @@ import {RouteGuardInfoSpedizioneService} from './services/route-guard/route-guar
 import {ProfiloAziendaleComponent} from './profilo-aziendale/profilo-aziendale.component';
 import {ContattiComponent} from './contatti/contatti.component';
 import {HomeLavoraConNoiComponent} from './components-lavora-con-noi/home-lavora-con-noi/home-lavora-con-noi.component';
-import {AnnunciComponent} from './components-lavora-con-noi/annunci/annunci.component';
 import {ServiziOffertiHomeComponent} from './components-servizi-offerti/servizi-offerti-home/servizi-offerti-home.component';
+import {RiepilogoComponent} from './components-sottoscrizione/riepilogo/riepilogo.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -23,9 +23,9 @@ const routes: Routes = [
   {path: 'profilo', component: ProfiloAziendaleComponent},
   {path: 'contatti', component: ContattiComponent},
   {path: 'lavoraConNoi', component: HomeLavoraConNoiComponent},
-  // {path: 'lavoraConNoi/annunci', component: AnnunciComponent},
   {path: 'serviziOfferti', component: ServiziOffertiHomeComponent},
   {path: 'dashboard', component: DashboardComponent, canActivate: [RouteGuardService]},
+  {path: 'riepilogoOrdine', component: RiepilogoComponent, canActivate: [RouteGuardService]},
   {path: 'infoSpedizione', component: InfoSpedizioneComponent, canActivate: [RouteGuardInfoSpedizioneService]},
   {path: '**', component: ErrorComponent}
 ];

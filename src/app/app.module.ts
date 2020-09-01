@@ -18,6 +18,9 @@ import { RicercaSpedizioneComponent } from './ricerca-spedizione/ricerca-spedizi
 import { InfoSpedizioneComponent } from './info-spedizione/info-spedizione.component';
 import { ProfiloAziendaleComponent } from './profilo-aziendale/profilo-aziendale.component';
 import { ContattiComponent } from './contatti/contatti.component';
+import { HomeLavoraConNoiComponent } from './home-lavora-con-noi/home-lavora-con-noi.component';
+import { AnnunciComponent } from './annunci/annunci.component';
+import { CandidaturaAnnuncioComponent } from './candidatura-annuncio/candidatura-annuncio.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { ContattiComponent } from './contatti/contatti.component';
     RicercaSpedizioneComponent,
     InfoSpedizioneComponent,
     ProfiloAziendaleComponent,
-    ContattiComponent
+    ContattiComponent,
+    HomeLavoraConNoiComponent,
+    AnnunciComponent,
+    CandidaturaAnnuncioComponent
   ],
   imports: [
     BrowserModule,

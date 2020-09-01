@@ -1,0 +1,116 @@
+<div class="columns is-gapless is-multiline is-mobile">
+  <div class="column is-one-fifth"></div>
+
+  <div class="column">
+    <div class="h1 mb-5">Candidatura</div>
+
+    <div *ngIf="errCandidatura">
+      <app-msg-err [msg]="errCandidatura" ></app-msg-err>
+      <button class="button is-success " (click)="errCandidatura=null">OK!</button>
+    </div>
+
+
+    <div *ngIf="succReg">
+      <app-msg-suc [msg]="succReg"></app-msg-suc>
+      <button class="btn btn-success" routerLink="/home">Home</button>
+    </div>
+
+    <div *ngIf="succReg">
+      <h1>Il codice della candidatura è {{this.candidato.idCandidato}}</h1>
+    </div>
+
+    <div *ngIf="!succReg">
+
+      <form class="mt-3">
+
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="nome">Nome*</label>
+            <input type="text" class="form-control" id="nome" placeholder="Nome" [(ngModel)]="nome" name="nome">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="cognome">Cognome*</label>
+            <input type="text" class="form-control" id="cognome" placeholder="Cognome" [(ngModel)]="cognome" name="cognome">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="cf">Codice Fiscale*</label>
+            <input type="text" class="form-control" id="cf" placeholder="Codice Fiscale" [(ngModel)]="cf" name="cf">
+          </div>
+        </div><!--first form row end-->
+
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="dataN">Data di nascita*</label>
+            <input type="text" class="form-control" id="dataN" placeholder="Data di nascita" [(ngModel)]="dataN" name="dataN">
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="luogoN">Luogo di nascita*</label>
+            <input type="text" class="form-control" id="luogoN" placeholder="Luogo di nascita" [(ngModel)]="luogoN" name="luogoN">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="telefono">Telefono*</label>
+            <input type="text" class="form-control" id="telefono" placeholder="Telefono" [(ngModel)]="telefono" name="telefono">
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="titoloS">Titolo di studio*</label>
+            <input type="text" class="form-control" id="titoloS" placeholder="Titolo di studio" [(ngModel)]="titoloS" name="titoloS">
+          </div>
+
+        </div>
+
+        <div class="form-row h5 mt-3 mb-3">
+          Dati Indirizzo
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="regione">Regione*</label>
+            <input type="text" class="form-control" id="regione" placeholder="Regione" [(ngModel)]="regione" name="regione">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="citta">Città*</label>
+            <input type="text" class="form-control" id="citta" placeholder="Città" [(ngModel)]="citta" name="citta">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="provincia">Provincia*</label>
+            <input type="text" class="form-control" id="provincia" placeholder="Provincia" [(ngModel)]="provincia" name="provincia">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-10">
+            <label for="via">Via*</label>
+            <input type="text" class="form-control" id="via" placeholder="Via" [(ngModel)]="via" name="via">
+          </div>
+
+          <div class="form-group col-md-2">
+            <label for="civico">Civico*</label>
+            <input type="text" class="form-control" id="civico" placeholder="Civico" [(ngModel)]="civico" name="civico">
+          </div>
+        </div>
+
+
+
+        <p>*campo obbligatorio</p>
+        <button class="btn btn-primary mt-2 mb-2" (click)="registraCandidatura()"
+                *ngIf="(this.nome && this.cognome && this.dataN && this.titoloS && this.luogoN && this.cf &&
+                this.telefono && this.regione && this.citta && this.provincia && this.via && this.civico)">
+          Registrati</button>
+        <div class="btn btn-primary mt-2 mb-2 disabled" *ngIf="!(this.nome && this.cognome && this.dataN && this.titoloS && this.luogoN && this.cf &&
+                this.telefono && this.regione && this.citta && this.provincia && this.via && this.civico)">
+          Registrati</div>
+      </form>
+    </div>
+  </div>
+  <div class="column is-one-fifth"></div>
+</div>

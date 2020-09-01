@@ -1,10 +1,10 @@
-<div class="field">
+<div class="field mr-6 ml-6">
   <label class="label">Ricerca una spedizione!</label>
   <div class="control form-row text-center">
 
     <input class="input col-md-9 ml-auto " type="text" placeholder="Codice spedizione" [(ngModel)]="codiceSpedizione">
-    <button class="button is-success is-disabled ml-1 mr-auto col-md-2" *ngIf="!codiceSpedizione">Cerca</button>
-    <button  type="submit" class="button is-success ml-1 mr-auto col-md-2"(click)="ricerca()" *ngIf="codiceSpedizione">Cerca</button>
+    <button class="btn disabled button is-success is-disabled ml-1 mr-auto col-md-2" *ngIf="!codiceSpedizione">Cerca</button>
+    <button  class="button is-success ml-1 mr-auto col-md-2"(click)="ricerca()" *ngIf="codiceSpedizione">Cerca</button>
   </div>
   <p class="help">{{msg}}</p>
 <!--  <p class="help" style="color: red" *ngIf="error">{{error}}</p>-->

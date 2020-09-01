@@ -1,0 +1,44 @@
+
+
+<div class="columns mt-6 mb-6">
+
+  <div class="column is-one-quarter ml-2">
+
+    <div class="sidenav panel has-background-light">
+      <ul>
+        <li><a (click)="selMenu = 1; visualizzaAnnunci()">Consulta annunci</a></li>
+        <br> <br> <br> <br> <br>
+        <li><a class="text-decoration-none" routerLink="/home">Esci</a></li>
+      </ul>
+
+    </div>
+
+
+  </div>
+
+  <div class="column ml-2 mr-2">
+    <h1 class="mt-2" (click)="selMenu = 0" style="margin-left: 10%;">
+      <a class="titlePage">Lavora in FastShipments!</a>
+    </h1>
+    <div *ngIf="selMenu === 0" style="margin-right: 20%; margin-left: 10%">
+      <h2>Qualità</h2>
+      <p class="text-justify">
+        Il successo e lo sviluppo di FastShipments è da attribuirsi a diversi fattori fra i quali ha elevata importanza la qualità delle Risorse Umane.
+      </p>
+      <h2>Opportunità</h2>
+      <p class="text-justify">
+        Premiamo capacità, motivazione e risultati offrendo a ciascuno opportunità
+        di crescita coerenti ed ogni anno investiamo in formazione.
+        La presenza capillare sul territorio nazionale, le dimensioni aziendali e la varietà di professionalità necessarie,
+        ci consentono di poter offrire interessanti opportunità a tutte le persone selezionate.
+      </p>
+      <h2>Selezione del personale</h2>
+      <p class="text-justify">
+        Se siete alla ricerca di un lavoro dinamico in un'azienda all'avanguardia,
+        verificate nelle pagine interne le opportunità che oggi possiamo concretamente offrirvi.
+        Potete candidarvi in risposta agli annunci delle posizioni attualmente ricercate, verrete contattati al più presto per inviare il curriculum.
+      </p>
+    </div>
+    <app-annunci *ngIf="selMenu === 1" [annunci]="annunciDisponibili"></app-annunci>
+  </div>
+</div>

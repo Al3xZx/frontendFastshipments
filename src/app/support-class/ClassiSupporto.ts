@@ -16,6 +16,7 @@ export class Indirizzo {
     this.nome = nome;
     this.cognome = cognome;
   }
+
 }
 
 class Abbonamento {
@@ -256,17 +257,28 @@ export class Hub{
 
 export class Candidato {
   public idCandidato: number;
+  public telefono: string
   public nome: string;
   public cognome: string;
   public dataNascita: string;
   public luogoNascita: string;
-  public CF: string;
+  public cf: string;
   public titoloStudio: string;
   public indirizzoCandidato: Indirizzo;
   public indirizzo: string
   public annuncio: Annuncio;
 
-  constructor(){}
+  constructor(telefono: string, CF: string, nome: string, cognome: string, dataNascita: string, luogoNascita: string,
+              titoloStudio: string, indirizzoCandidato: Indirizzo){
+    this.telefono = telefono;
+    this.cf = CF;
+    this.nome = nome;
+    this.cognome = cognome;
+    this.dataNascita = dataNascita;
+    this.luogoNascita = luogoNascita;
+    this.titoloStudio = titoloStudio;
+    this.indirizzoCandidato = indirizzoCandidato;
+  }
 }
 
 export class Annuncio{

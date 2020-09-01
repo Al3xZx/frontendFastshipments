@@ -21,35 +21,37 @@
         Servizi offerti
       </a>
 
+      <a class="navbar-item" routerLink="/dashboard" *ngIf="accounting.isLogged()">
+        Dashboard
+      </a>
+
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link text-decoration-none">
           Altro
         </a>
 
         <div class="navbar-dropdown">
-          <a class="navbar-item">
-            About
+          <a class="navbar-item" routerLink="/profilo">
+            Profilo Aziendale
           </a>
-          <a class="navbar-item">
-            Jobs
+          <a class="navbar-item" routerLink="/lavoraConNoi">
+            Lavora con noi
           </a>
-          <a class="navbar-item">
+          <a class="navbar-item" routerLink="/contatti">
             Contattaci
           </a>
-          <hr class="navbar-divider">
-          <a class="navbar-item">
-            Report an issue
-          </a>
+<!--          <hr class="navbar-divider">-->
+<!--          <a class="navbar-item">-->
+<!--            Report an issue-->
+<!--          </a>-->
         </div>
       </div>
-      <a class="navbar-item" routerLink="/dashboard" *ngIf="accounting.isLogged()">
-        Dashboard
-      </a>
+
     </div>
 
     <div class="navbar-end">
       <div class="navbar-item">
-        <div class="buttons">
+        <div class="buttons" style="font-size: 20px">
           <a class="button is-info text-decoration-none" routerLink="/registrazione" *ngIf="!accounting.isLogged()">
             <strong>Registrati</strong>
           </a>

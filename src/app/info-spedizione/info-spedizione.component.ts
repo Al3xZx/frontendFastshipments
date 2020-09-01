@@ -24,7 +24,7 @@ export class InfoSpedizioneComponent implements OnInit {
 
   visualizzaInfo() {
     this.codiceSpedizione = sessionStorage.getItem('idSpedizione');
-    //sessionStorage.removeItem('idSpedizione'); //todo DA ATTIVARE DOPO I TEST!!!!!!
+    sessionStorage.removeItem('idSpedizione');
     this.spedizioneService.ricerca(this.codiceSpedizione).subscribe(
       response =>{
         this.spedizione = response;

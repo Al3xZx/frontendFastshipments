@@ -10,6 +10,8 @@ import {InfoSpedizioneComponent} from './info-spedizione/info-spedizione.compone
 import {RouteGuardInfoSpedizioneService} from './services/route-guard/route-guard-info-spedizione.service';
 import {ProfiloAziendaleComponent} from './profilo-aziendale/profilo-aziendale.component';
 import {ContattiComponent} from './contatti/contatti.component';
+import {HomeLavoraConNoiComponent} from './home-lavora-con-noi/home-lavora-con-noi.component';
+import {AnnunciComponent} from './annunci/annunci.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -19,6 +21,8 @@ const routes: Routes = [
   {path: 'registrazione', component: RegistrazioneComponent},
   {path: 'profilo', component: ProfiloAziendaleComponent},
   {path: 'contatti', component: ContattiComponent},
+  {path: 'lavoraConNoi', component: HomeLavoraConNoiComponent},
+  {path: 'lavoraConNoi/annunci', component: AnnunciComponent},
   {path: 'dashboard', component: DashboardComponent, canActivate: [RouteGuardService]},
   {path: 'infoSpedizione', component: InfoSpedizioneComponent, canActivate: [RouteGuardInfoSpedizioneService]},
   {path: '**', component: ErrorComponent}

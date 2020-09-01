@@ -1,0 +1,10 @@
+<div *ngIf="!annuncioScelto">
+  <ul class="list-group" *ngFor="let a of this.annunci">
+    <a class="list-group-item list-group-item-action mt-3 mb-3" >
+      <h6 class="annuncio">{{a.descrizione}}</h6>
+      <!--style="font-size: 25px"-->
+      <div class="float-right button is-success"  (click)="candidatura(a)">Candidati</div>
+    </a>
+  </ul>
+</div>
+<app-candidatura-annuncio *ngIf="annuncioScelto" [annuncioScelto]="annuncioScelto"></app-candidatura-annuncio>

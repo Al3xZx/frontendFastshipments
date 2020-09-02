@@ -29,6 +29,8 @@ import { AbbonamentoComponent } from './components-servizi-offerti/abbonamento/a
 import { AbbonamentoMagazzinoComponent } from './components-servizi-offerti/abbonamento-magazzino/abbonamento-magazzino.component';
 import { PagamentoComponent } from './components-sottoscrizione/pagamento/pagamento.component';
 import { RiepilogoComponent } from './components-sottoscrizione/riepilogo/riepilogo.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CreazioneSpedizioneComponent } from './components-servizi-offerti/creazione-spedizione/creazione-spedizione.component';
 
 @NgModule({
   declarations: [
@@ -56,13 +58,15 @@ import { RiepilogoComponent } from './components-sottoscrizione/riepilogo/riepil
     AbbonamentoComponent,
     AbbonamentoMagazzinoComponent,
     PagamentoComponent,
-    RiepilogoComponent
+    RiepilogoComponent,
+    CreazioneSpedizioneComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [
    // {provide: LOCALE_ID, useValue: 'fr-FR'}

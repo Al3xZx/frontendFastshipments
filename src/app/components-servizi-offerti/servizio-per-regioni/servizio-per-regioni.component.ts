@@ -27,7 +27,7 @@ export class ServizioPerRegioniComponent implements OnInit {
     )
   }
 
-  prelevaIndirizzo(h: Hub) {
+  prelevaIndirizzo(h: Hub){
     var indirizzoHubS = h.indirizzo;
     var arSplit = indirizzoHubS.split(/\s?[a-zA-Z]+:\s/);
     h.indirizzoHub = new IndirizzoHub(arSplit[1],arSplit[2],arSplit[3],arSplit[4],arSplit[5]);

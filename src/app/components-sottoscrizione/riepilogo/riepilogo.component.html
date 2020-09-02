@@ -1,1 +1,105 @@
-<p>riepilogo works!</p>
+<h3 class="text-center">Riepilogo ordine</h3>
+
+<div class="row justify-content-center">
+
+  <div *ngIf="abbonamento" class="col-4 mr-2 mt-2 mb-2 ml-2">
+    <div class="panel is-info">
+      <p class="panel-heading">Dati Abbonamento</p>
+      <div class="panel-block">Descrizione: {{abbonamento.descrizione}}</div>
+      <div class="panel-block">Durata (in giorni): {{abbonamento.durata}}</div>
+      <div class="panel-block">Prezzo: {{abbonamento.costo}}€</div>
+      <div class="panel-block">Numero di spedizioni: {{abbonamento.numeroSpedizioni}}</div>
+      <div class="panel-block button is-success justify-content-center" (click)="tipoPagamento = 'ABBONAMENTO'">Procedi con il pagamento</div>
+    </div>
+  </div>
+  <div *ngIf="abbonamentoMagazzino" class="col-4 mr-2 mt-2 mb-2 ml-2">
+    <div class="panel is-info">
+      <p class="panel-heading">Dati Abbonamento Magazzino</p>
+      <div class="panel-block">Descrizione: {{abbonamentoMagazzino.descrizione}}</div>
+      <div class="panel-block">Durata (in giorni): {{abbonamentoMagazzino.durata}}</div>
+      <div class="panel-block">Prezzo: {{abbonamentoMagazzino.costo}}€</div>
+      <div class="panel-block">Numero di spedizioni: {{abbonamentoMagazzino.numeroSpedizioni}}</div>
+      <div class="panel-block">Volume disponibile: {{abbonamentoMagazzino.volumeDisponibile}} m<sup>3</sup></div>
+      <div class="panel-block">Scegli la regione dove risiede l'hub:</div>
+
+      <div ngbDropdown placement="bottom-right" class="panel-block d-inline-block">
+        <div class="button btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle >
+          <p *ngIf="!hubScelto">Regione</p>
+          <p *ngIf="hubScelto">{{hubScelto.indirizzoHub.regione}}</p>
+        </div>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem *ngFor="let h of this.hubDisponibili" (click)="hubScelto = h; h.indirizzoHub = prelevaIndirizzo(h)">
+            {{prelevaIndirizzo(h).regione}}
+          </button>
+        </div>
+      </div>
+
+      <div *ngIf="hubScelto" class="panel-block button is-success justify-content-center" (click)="tipoPagamento = 'ABBONAMENTO_MAGAZZINO'">Procedi con il pagamento</div>
+    </div>
+  </div>
+
+  <div *ngIf="spedizione" class="col-4 mr-2 mt-2 mb-2 ml-2">
+    <div class="panel is-info">
+      <p class="panel-heading">Dati spedizione</p>
+      <div class="panel-block">
+        <div>
+          <h5>Indirizzo destinazione</h5>
+          <h6>Regione: {{this.spedizione.indirizzoDestinazione.regione}}</h6>
+          <h6>Città: {{this.spedizione.indirizzoDestinazione.citta}}</h6>
+          <h6>Provincia: {{this.spedizione.indirizzoDestinazione.provincia}}</h6>
+          <h6>Via: {{this.spedizione.indirizzoDestinazione.via}}</h6>
+          <h6>Civico: {{this.spedizione.indirizzoDestinazione.civico}}</h6>
+          <h6>Nome destinatario: {{this.spedizione.indirizzoDestinazione.nome}}</h6>
+          <h6 *ngIf="this.spedizione.indirizzoDestinazione.cognome">Cognome destinatario: {{this.spedizione.indirizzoDestinazione.cognome}}</h6>
+        </div>
+      </div>
+      <div class="panel-block">
+        <h6>Volume: {{this.spedizione.volume}}</h6>
+      </div>
+      <div class="panel-block">
+        <h6>Imponibile: {{this.imponibile}}€ +IVA(22%)</h6>
+      </div>
+      <div class="panel-block">
+        <h6>Totale: {{this.totaleSpedizione}}€</h6>
+      </div>
+    </div>
+    <div class="panel-block button is-success justify-content-center" (click)="tipoPagamento = 'SPEDIZIONE'">Procedi con il pagamento</div>
+  </div>
+
+  <div *ngIf="cliente" class="col-4 mr-2 mt-2 mb-2 ml-2">
+    <div class="panel is-info">
+      <p class="panel-heading">Dati clienti</p>
+      <div *ngIf="cliente.nome" class="panel-block">Nome: {{cliente.nome}}</div>
+      <div *ngIf="cliente.cognome" class="panel-block">Cognome: {{cliente.cognome}}</div>
+      <div *ngIf="cliente.cf" class="panel-block">Codice Fiscale: {{cliente.cf}}</div>
+      <div *ngIf="cliente.ragioneSociale" class="panel-block">Ragione sociale: {{cliente.ragioneSociale}}</div>
+      <div *ngIf="cliente.pIva" class="panel-block">P.Iva: {{cliente.pIva}}</div>
+
+      <div class="panel-block">Tel: {{cliente.telefono}}</div>
+      <div class="panel-block">e-mail: {{cliente.email}}</div>
+
+      <div class="panel-block">
+        <div>
+          <h5>Indirizzo cliente</h5>
+          <h6>Regione: {{cliente.indirizzoCliente.regione}}</h6>
+          <h6>Città: {{this.cliente.indirizzoCliente.citta}}</h6>
+          <h6>Provincia: {{this.cliente.indirizzoCliente.provincia}}</h6>
+          <h6>Via: {{this.cliente.indirizzoCliente.via}}</h6>
+          <h6>Civico: {{this.cliente.indirizzoCliente.civico}}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="justify-content-center">
+  <app-pagamento *ngIf="tipoPagamento"
+                 [tipoPagamento]="tipoPagamento"
+                 [abbonamento]="abbonamento"
+                 [abbonamentoMagazzino]="abbonamentoMagazzino"
+                 [spedizione]="spedizione"
+                 [hubScelto]="hubScelto">
+
+  </app-pagamento>
+</div>
+

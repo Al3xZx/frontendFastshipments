@@ -17,7 +17,7 @@ export class AbbonamentoService {
   }
 
   sottoscriviAbbonamento(idCliente: number, idAbbonamento: number, cartaCredito: CartaCredito){
-    return this.httpClient.post<AbbonamentoSottoscritto>(`http://${this.server}:${this.port}/abbonamento//sottoscrivi/${idCliente}/${idAbbonamento}`,cartaCredito);
+    return this.httpClient.post<AbbonamentoSottoscritto>(`http://${this.server}:${this.port}/abbonamento/sottoscrivi/${idCliente}/${idAbbonamento}`,cartaCredito);
   }
 
 }

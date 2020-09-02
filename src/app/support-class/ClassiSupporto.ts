@@ -83,7 +83,12 @@ export class CartaCredito{
   public cvv: string;
   public saldoDisponibile: number;
 
-  constructor(){}
+  constructor(numero: string, nomeIntestatario: string, cognomeIntestatario: string, cvv: string){
+    this.numero = numero;
+    this.nomeIntestatario = nomeIntestatario;
+    this.cognomeIntestatario = cognomeIntestatario;
+    this.cvv = cvv;
+  }
 }
 
 export class AccountCliente{
@@ -118,7 +123,9 @@ export class Spedizione {
   public merci: Merce[];
   public fattura: Fattura;
 
-  constructor() {
+  constructor(indirizzoDestinazione: Indirizzo, volume: number) {
+    this.indirizzoDestinazione = indirizzoDestinazione
+    this.volume = volume;
   }
 
 }

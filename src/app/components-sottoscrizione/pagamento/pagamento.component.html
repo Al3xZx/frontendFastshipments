@@ -1,1 +1,54 @@
-<p>pagamento works!</p>
+
+<h3 class="text-center">Pagamento</h3>
+<div class="justify-content-center">
+<div class="justify-content-center">
+  <app-msg-err class="text-center" *ngIf="errMsg" [msg]="errMsg"></app-msg-err>
+</div>
+
+<div *ngIf="msg" class="alert alert-success m-3 text-center">
+  {{msg}} <a routerLink="/dashboard">dasboard</a>
+</div>
+
+<div *ngIf="msgW" class="alert alert-warning m-3 text-center">
+  {{msgW}}
+</div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-4 mr-2 mt-2 mb-2 ml-2">
+    <div class="panel">
+      <p class="panel-heading"> Informazioni Carta di credito</p>
+      <div class="panel-block">
+        <div class="row form-row">
+          <div class="form-group col-md-6">
+            <label for="nomeIntestatario">Nome</label>
+            <input type="text" class="form-control" id="nomeIntestatario" placeholder="Nome" [(ngModel)]="nomeIntestatario" name="nomeIntestatario">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="cognomeIntestatario">Cognome</label>
+            <input type="text" class="form-control" id="cognomeIntestatario" placeholder="Cognome" [(ngModel)]="cognomeIntestatario" name="cognomeIntestatario">
+          </div>
+        </div>
+      </div>
+      <div class="panel-block">
+        <div class="row form-row">
+          <div class="form-group col-md-8">
+            <label for="numero">Numero</label>
+            <input type="text" class="form-control" id="numero" placeholder="Numero" [(ngModel)]="numero" name="numero">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="cvv">CVV</label>
+            <input type="text" class="form-control" id="cvv" placeholder="cvv" [(ngModel)]="cvv" name="cvv">
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-block button is-info justify-content-center" (click)="pagamento()" *ngIf="(numero && nomeIntestatario && cognomeIntestatario && cvv)">
+          Paga
+      </div>
+      <div class="panel-block button is-info is-light justify-content-center" *ngIf="!(numero && nomeIntestatario && cognomeIntestatario && cvv)">
+          Paga
+      </div>
+    </div>
+  </div>
+</div>

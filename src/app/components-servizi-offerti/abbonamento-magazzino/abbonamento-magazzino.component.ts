@@ -25,7 +25,8 @@ export class AbbonamentoMagazzinoComponent implements OnInit {
   sottoscrivi() {
     if(!this.accountingService.isLogged()) this.errMsg = "è necessario essere registrato per sottoscrivere un abbonamento"
     else{
-        sessionStorage.setItem("ID_ABBONAMENTO_MAGAZZINO", this.abbonamento.idAbbonamento.toString());
+        //sessionStorage.setItem("ID_ABBONAMENTO_MAGAZZINO", this.abbonamento.idAbbonamento.toString());
+        sessionStorage.setItem("ABBONAMENTO_MAGAZZINO", JSON.stringify(this.abbonamento));
         this.router.navigate(["/riepilogoOrdine"]);
     }
   }

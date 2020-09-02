@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AccountingService} from '../../services/data/accounting.service';
 import {Router} from '@angular/router';
-import {AccountCliente, Cliente} from '../../support-class/ClassiSupporto';
+import {AccountCliente, Cliente, Indirizzo} from '../../support-class/ClassiSupporto';
 
 @Component({
   selector: 'app-login',
@@ -28,6 +28,8 @@ export class LoginComponent implements OnInit {
       response => {
         this.clienteLoggato = response;
         sessionStorage.setItem("userId", this.clienteLoggato.idCliente.toString());
+        this.clienteLoggato.indirizzoCliente = this.prelevaIndirizzo(response)
+        sessionStorage.setItem("CLIENTE", JSON.stringify(this.clienteLoggato));
         this.router.navigate(["/dashboard"])
 
       },
@@ -36,5 +38,11 @@ export class LoginComponent implements OnInit {
         setTimeout( ()=>{this.errMsg = null }, 2500);
       }
     )
+  }
+
+  private prelevaIndirizzo(cliente: Cliente) :Indirizzo{
+    var indirizzoS = cliente.indirizzo;
+    var arSplit = indirizzoS.split(/\s?[a-zA-Z]+:\s/);
+    return new Indirizzo(arSplit[1],arSplit[2],arSplit[3],arSplit[4],arSplit[5],arSplit[6],arSplit[7])
   }
 }

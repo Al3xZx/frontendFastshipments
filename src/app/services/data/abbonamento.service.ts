@@ -20,4 +20,7 @@ export class AbbonamentoService {
     return this.httpClient.post<AbbonamentoSottoscritto>(`http://${this.server}:${this.port}/abbonamento/sottoscrivi/${idCliente}/${idAbbonamento}`,cartaCredito);
   }
 
+  abbonamentiSottoscritti(idCliente: number) {
+    return this.httpClient.get<AbbonamentoSottoscritto[]>(`http://${this.server}:${this.port}/abbonamento/sottoscritti/${idCliente}`);
+  }
 }

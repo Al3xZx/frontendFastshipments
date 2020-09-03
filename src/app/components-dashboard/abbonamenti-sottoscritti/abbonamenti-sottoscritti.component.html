@@ -1,1 +1,12 @@
-<p>abbonamenti-sottoscritti works!</p>
+
+
+<div *ngIf="abbonamentiSottoscritti">
+  <div *ngIf="abbonamentiSottoscritti.length === 0" class="alert alert-warning">
+    Non sono presenti abbonamenti sottoscritti
+  </div>
+  <div class="row">
+    <div *ngFor="let a of abbonamentiSottoscritti" class="col">
+      <app-abbonamento-sttoscr [abbonamentoSottoscritto]="a"></app-abbonamento-sttoscr>
+    </div>
+  </div>
+</div>

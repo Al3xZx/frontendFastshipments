@@ -22,7 +22,7 @@ export class AccountingService {
   }
 
   isLogged(): boolean{
-    return (sessionStorage.getItem('userId') != null) ? true : false;
+    return (sessionStorage.getItem('userId') != null && sessionStorage.getItem('CLIENTE') != null) ? true : false;
   }
 
   logoutUser(){

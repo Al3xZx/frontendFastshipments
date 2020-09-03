@@ -2,11 +2,13 @@
   <div class="panel-block">Descrizione: {{abbonamentoMagSottoscritto.abbonamentoMagazzino.descrizione}}</div>
   <div class="panel-block">Durata (in giorni): {{abbonamentoMagSottoscritto.abbonamentoMagazzino.durata}}</div>
   <div class="panel-block">Prezzo: {{abbonamentoMagSottoscritto.abbonamentoMagazzino.costo}}€</div>
-  <div class="panel-block">Numero di spedizioni: {{abbonamentoMagSottoscritto.abbonamentoMagazzino.numeroSpedizioni}}</div>
   <div class="panel-block">Volume disponibile: {{abbonamentoMagSottoscritto.abbonamentoMagazzino.volumeDisponibile}} m<sup>3</sup></div>
-<!--  <div class="panel-block">-->
-<!--    <a class="button is-success float-right mt-2 mr-2 mb-2" (click)="dettaglioMerci()">dettaglioMerci</a>-->
-<!--  </div>-->
-<!--  <app-msg-err *ngIf="errMsg" [msg]="errMsg" style="font-size: 10px" class="panel-block"></app-msg-err>-->
+  <div class="panel-block">Volume utilizzato: {{abbonamentoMagSottoscritto.volumeUtilizzato.toFixed(2)}} m<sup>3</sup></div>
+  <div class="panel-block">Hub scelto: {{prelevaIndirizzo(abbonamentoMagSottoscritto.hub).regione}}</div>
+  <div class="panel-block">Data scadenza:{{abbonamentoMagSottoscritto.dataFine  | date : 'fullDate'}} at {{abbonamentoMagSottoscritto.dataFine  | date : 'mediumTime'}}</div>
+  <div class="panel-block row">
+    <a class="col button is-success float-right mt-2 mr-2 ml-2 mb-2" (click)="richiestaRitiroMerci()">Richiesta ritiro merci</a>
+    <a class="col button is-info float-right mt-2 mr-2 ml-2 mb-2" (click)="elencoMerciMagazzino()">Elenco Merci in magazzino</a>
+  </div>
 </div>
 

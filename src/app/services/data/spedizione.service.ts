@@ -21,4 +21,16 @@ export class SpedizioneService {
     return this.httpClient.post<Spedizione>(`http://${this.server}:${this.port}/spedizione/aggiungi_spedizione/${idCliente}`, spedizioneCartaWrap);
   }
 
+  spedizioneDaMagazzino(idAbbonamentoMagazzino: number,idCliente: number, indirizzoDestAndMerci){
+    return this.httpClient.post<Spedizione>(`http://${this.server}:${this.port}/spedizione/spedizioneDaMagazzino/${idAbbonamentoMagazzino}/${idCliente}`, indirizzoDestAndMerci);
+  }
+
+  spedizioneDaAbbonamento(idAbbonamento: number,idCliente: number, spedizione: Spedizione){
+    return this.httpClient.post<Spedizione>(`http://${this.server}:${this.port}/spedizione/spedizioneDaAbbonamento/${idAbbonamento}/${idCliente}`, spedizione);
+  }
+
+  spedizioneEffettuate(idCliente: string){
+    return this.httpClient.get<Spedizione[]>(`http://${this.server}:${this.port}/spedizione/effettuate/${idCliente}`);
+  }
+
 }

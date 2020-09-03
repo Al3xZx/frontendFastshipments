@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {AbbonamentoSottoscritto} from '../../support-class/ClassiSupporto';
+import {AccountingService} from '../../services/data/accounting.service';
+import {AbbonamentoService} from '../../services/data/abbonamento.service';
 
 @Component({
   selector: 'app-abbonamenti-sottoscritti',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AbbonamentiSottoscrittiComponent implements OnInit {
 
-  constructor() { }
+  abbonamentiSottoscritti: AbbonamentoSottoscritto[];
+
+  constructor(private accountingService: AccountingService,
+              private abbonamentoService: AbbonamentoService) { }
 
   ngOnInit(): void {
+    this.prelevaAbbonamenti();
   }
 
+  private prelevaAbbonamenti() {
+    this.abbonamentoService.abbonamentiSottoscritti(this.accountingService.loggedUser()).subscribe(
+      response => {
+        this.abbonamentiSottoscritti = response;
+      },error => {
+
+      }
+    )
+  }
 }

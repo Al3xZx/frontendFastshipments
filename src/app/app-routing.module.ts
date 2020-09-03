@@ -13,6 +13,10 @@ import {ContattiComponent} from './contatti/contatti.component';
 import {HomeLavoraConNoiComponent} from './components-lavora-con-noi/home-lavora-con-noi/home-lavora-con-noi.component';
 import {ServiziOffertiHomeComponent} from './components-servizi-offerti/servizi-offerti-home/servizi-offerti-home.component';
 import {RiepilogoComponent} from './components-sottoscrizione/riepilogo/riepilogo.component';
+import {RichiestaRitiroMerciComponent} from './components-dashboard/richiesta-ritiro-merci/richiesta-ritiro-merci.component';
+import {SpedizioneMerciComponent} from './components-dashboard/spedizione-merci/spedizione-merci.component';
+import {ElencoMerciMagazzinoComponent} from './components-dashboard/elenco-merci-magazzino/elenco-merci-magazzino.component';
+import {RichiestaSpedizioneAbbonamentoComponent} from './components-dashboard/richiesta-spedizione-abbonamento/richiesta-spedizione-abbonamento.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -25,6 +29,10 @@ const routes: Routes = [
   {path: 'lavoraConNoi', component: HomeLavoraConNoiComponent},
   {path: 'serviziOfferti', component: ServiziOffertiHomeComponent},
   {path: 'dashboard', component: DashboardComponent, canActivate: [RouteGuardService]},
+  {path: 'dashboard/richiestaRitiroMerci', component: RichiestaRitiroMerciComponent, canActivate: [RouteGuardService]},
+  {path: 'dashboard/elencoMerciMagazzino', component: ElencoMerciMagazzinoComponent, canActivate: [RouteGuardService]},
+  {path: 'dashboard/spedizione_merci', component: SpedizioneMerciComponent, canActivate: [RouteGuardService]},
+  {path: 'dashboard/richiestaSpedizione', component: RichiestaSpedizioneAbbonamentoComponent, canActivate: [RouteGuardService]},
   {path: 'riepilogoOrdine', component: RiepilogoComponent, canActivate: [RouteGuardService]},
   {path: 'infoSpedizione', component: InfoSpedizioneComponent, canActivate: [RouteGuardInfoSpedizioneService]},
   {path: '**', component: ErrorComponent}

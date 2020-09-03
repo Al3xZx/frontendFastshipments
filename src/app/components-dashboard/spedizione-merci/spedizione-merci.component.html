@@ -1,10 +1,19 @@
-
-
 <div class="columns is-gapless is-multiline is-mobile">
   <div class="column is-one-fifth"></div>
+  <div class="column" *ngIf="succMsg">
+    <div>
+      <app-msg-suc *ngIf="succMsg" [msg]="succMsg"></app-msg-suc>
+      <div class="button is-success" routerLink="/dashboard"> Dashboard</div>
+    </div>
+  </div>
 
-  <div class="column">
-    <app-msg-err *ngIf="errMsg" [msg]="errMsg"></app-msg-err>
+  <div class="column" *ngIf="!succMsg">
+
+    <div *ngIf="errMsg">
+    <app-msg-err [msg]="errMsg"></app-msg-err>
+      <div class="button is-success" (click)="errMsg = null"> ok!</div>
+    </div>
+
     <h4>Dati destinatario</h4>
     <form class="mt-3">
 
@@ -48,27 +57,19 @@
           <input type="text" class="form-control" id="civico" placeholder="Civico" [(ngModel)]="civico" name="civico">
         </div>
       </div>
-      <br>
-      <h5>Dimensioni</h5>
-      <div class="form-row">
-        <div class="form-group col-md-4">
-          <label for="h">Altezza (metri) (esempio 3.4)</label>
-          <input type="text" class="form-control" id="h" placeholder="Altezza" [(ngModel)]="h" name="h">
-        </div>
-        <div class="form-group col-md-4">
-          <label for="p">Profondità (metri) (esempio 3.4)</label>
-          <input type="text" class="form-control" id="p" placeholder="Profondità" [(ngModel)]="p" name="p">
-        </div>
-        <div class="form-group col-md-4">
-          <label for="l">Larghezza (metri) (esempio 3.4)</label>
-          <input type="text" class="form-control" id="l" placeholder="Larghezza" [(ngModel)]="l" name="l">
+
+    </form>
+      <div class="panel">
+        <div class="panel-heading">Le merci selezionate nella spedizione sono: </div>
+        <div class="panel-block" *ngFor="let merce of merciDaSpedire">
+          Descrizione: {{merce.descrizione}}
         </div>
       </div>
-    </form>
+
 
     <p>*campo obbligatorio</p>
     <div class="panel-block button is-info justify-content-center" (click)="procedi()"
-         *ngIf="(nome && h && p && l) && (this.regione && this.citta && this.provincia && this.via && this.civico)">
+         *ngIf="(this.regione && this.citta && this.provincia && this.via && this.civico)">
       Procedi
     </div>
 

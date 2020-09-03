@@ -151,9 +151,11 @@ export class Merce{
   public stato: string;
   public spedizione: Spedizione;
   public proprietario: Cliente;
+  public qta : number;
+  public abbonamentoMagazzinoSottoscritto: AbbonamentoMagazzinoSottoscritto;
 
-  constructor() {
-  }
+  constructor(){}
+
 
 }
 
@@ -200,7 +202,7 @@ export class AbbonamentoMagazzino {
 }
 
 export class AbbonamentoMagazzinoSottoscritto{
-  public idAbbonamneto: number;
+  public idAbbonamento: number;
   public dataInizio: Date;
   public dataFine: Date;
   public volumeUtilizzato: number;

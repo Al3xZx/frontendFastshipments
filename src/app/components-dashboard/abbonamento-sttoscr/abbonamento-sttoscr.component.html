@@ -1,1 +1,11 @@
-<p>abbonamento-sttoscr works!</p>
+<div class="panel abbonamento mr-2 mt-2 ml-2 mb-2">
+  <div class="panel-block">Descrizione: {{abbonamentoSottoscritto.abbonamento.descrizione}}</div>
+  <div class="panel-block">Durata (in giorni): {{abbonamentoSottoscritto.abbonamento.durata}}</div>
+  <div class="panel-block">Prezzo: {{abbonamentoSottoscritto.abbonamento.costo}}€</div>
+  <div class="panel-block">Spedizioni disponibili: {{abbonamentoSottoscritto.abbonamento.numeroSpedizioni}}</div>
+  <div class="panel-block">Spedizioni effettuate: {{abbonamentoSottoscritto.spedizioniEffettuate}} </div>
+  <div class="panel-block">Data scadenza:{{abbonamentoSottoscritto.dataFine  | date : 'fullDate'}} at {{abbonamentoSottoscritto.dataFine   | date : 'mediumTime'}}</div>
+  <div class="panel-block row">
+    <a class="col button is-success float-right mt-2 mr-2 ml-2 mb-2" (click)="richiestaSpedizione()">Richiedi nuova spedizione</a>
+  </div>
+</div>

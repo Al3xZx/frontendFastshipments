@@ -1,0 +1,36 @@
+<div class="columns">
+  <div class="column is-one-fifth"></div>
+  <div class="column">
+    <div class="mb-6 mt-6" *ngIf="!warMsg && merci">
+      <div class="button is-success" *ngIf="selezionate > 0" (click)="richiediSpedizione()">
+        richiedi spedizione della perce selezionata
+      </div>
+      <div>
+        <ul class="list-group" >
+          <li class="row list-group-item list-group-item-action mt-3 mb-3" *ngFor="let merce of this.merci; let i = index">
+            <div class="col">Descrizione: {{merce.descrizione}}</div>
+            <div class="col">Stato: {{merce.stato}}</div>
+            <div class="is-clearfix">
+              <hr style="margin:5px 0 5px 0;">
+            </div>
+            <div>
+              <div class="row">
+                <div class="col-md-6">
+                  <a>Seleziona per includerla in una spedizione</a>
+                </div>
+                <div class="col-md-4">
+                  <div class="button is-success" (click)="cambia(i)" *ngIf="sel[i]">Selezionata</div>
+                  <div class="button is-success is-outlined" (click)="cambia(i)" *ngIf="!sel[i]">Deselezionata</div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div *ngIf="warMsg" class="alert alert-warning" >{{warMsg}}</div>
+  </div>
+
+  <div class="column is-one-fifth"></div>
+</div>

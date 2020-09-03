@@ -40,6 +40,7 @@
         <li class="panel-block" ><a (click)="selMenu = 1">Abbonamenti sottoscritti</a></li>
         <li class="panel-block" ><a (click)="selMenu = 2">Abbonamenti magazzino sottoscritti</a></li>
         <li class="panel-block" ><a (click)="selMenu = 3">Prenota una Spedizione</a></li>
+        <li class="panel-block" ><a (click)="selMenu = 4">Merci di proprietà</a></li>
         <br> <br> <br> <br> <br>
         <li class="panel-block" ><a class="text-decoration-none" routerLink="/home">Esci</a></li>
       </ul>
@@ -54,5 +55,7 @@
     <app-abbonamenti-magazzino-sottoscritti *ngIf="selMenu === 2" ></app-abbonamenti-magazzino-sottoscritti>
     <h3 *ngIf="selMenu === 3" class="titlePage">Prenota una Spedizione</h3>
     <app-creazione-spedizione *ngIf="selMenu === 3"></app-creazione-spedizione>
+    <h3 *ngIf="selMenu === 4" class="titlePage">Merci di proprietà</h3>
+    <app-elenco-all-merci *ngIf="selMenu === 4"></app-elenco-all-merci>
   </div>
 </div>

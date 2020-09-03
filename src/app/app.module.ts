@@ -35,6 +35,11 @@ import { AbbonamentiSottoscrittiComponent } from './components-dashboard/abbonam
 import { AbbonamentiMagazzinoSottoscrittiComponent } from './components-dashboard/abbonamenti-magazzino-sottoscritti/abbonamenti-magazzino-sottoscritti.component';
 import { AbbonamentoMagSottoscrComponent } from './components-dashboard/abbonamento-mag-sottoscr/abbonamento-mag-sottoscr.component';
 import { AbbonamentoSttoscrComponent } from './components-dashboard/abbonamento-sttoscr/abbonamento-sttoscr.component';
+import { RichiestaRitiroMerciComponent } from './components-dashboard/richiesta-ritiro-merci/richiesta-ritiro-merci.component';
+import { ElencoMerciMagazzinoComponent } from './components-dashboard/elenco-merci-magazzino/elenco-merci-magazzino.component';
+import { SpedizioneMerciComponent } from './components-dashboard/spedizione-merci/spedizione-merci.component';
+import { ElencoAllMerciComponent } from './components-dashboard/elenco-all-merci/elenco-all-merci.component';
+import { RichiestaSpedizioneAbbonamentoComponent } from './components-dashboard/richiesta-spedizione-abbonamento/richiesta-spedizione-abbonamento.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +72,12 @@ import { AbbonamentoSttoscrComponent } from './components-dashboard/abbonamento-
     AbbonamentiSottoscrittiComponent,
     AbbonamentiMagazzinoSottoscrittiComponent,
     AbbonamentoMagSottoscrComponent,
-    AbbonamentoSttoscrComponent
+    AbbonamentoSttoscrComponent,
+    RichiestaRitiroMerciComponent,
+    ElencoMerciMagazzinoComponent,
+    SpedizioneMerciComponent,
+    ElencoAllMerciComponent,
+    RichiestaSpedizioneAbbonamentoComponent
   ],
   imports: [
     BrowserModule,

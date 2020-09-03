@@ -1,1 +1,11 @@
-<p>abbonamenti-magazzino-sottoscritti works!</p>
+<div *ngIf="abbonamentiMagSottoscritti">
+  <div *ngIf="abbonamentiMagSottoscritti.length === 0" class="alert alert-warning">
+    Non sono presenti abbonamenti sottoscritti
+  </div>
+
+  <div class="row">
+    <div *ngFor="let a of abbonamentiMagSottoscritti" class="col">
+      <app-abbonamento-mag-sottoscr [abbonamentoMagSottoscritto]="a"></app-abbonamento-mag-sottoscr>
+    </div>
+  </div>
+</div>

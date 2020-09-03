@@ -3,15 +3,15 @@
   <div class="column is-one-quarter ml-2">
     <div class="sidenav panel has-background-light">
       <ul>
-        <li><a (click)="selMenu = 0">Servizi offerti</a></li>
-        <li><a (click)="selMenu = 1">Abbonamenti disponibili</a></li>
-        <li><a (click)="selMenu = 2">Abbonamenti  magazzino disponibili</a></li>
-        <li *ngIf="accountingService.isLogged()">
+        <li class="panel-block"><a (click)="selMenu = 0">Servizi offerti</a></li>
+        <li class="panel-block"><a (click)="selMenu = 1">Abbonamenti disponibili</a></li>
+        <li class="panel-block"><a (click)="selMenu = 2">Abbonamenti  magazzino disponibili</a></li>
+        <li class="panel-block" *ngIf="accountingService.isLogged()">
           <a (click)="selMenu = 3">Effettua una Spedizione</a>
         </li>
-        <li><a (click)="selMenu = 4">Disponibilità servizio per regione</a></li>
+        <li class="panel-block"><a (click)="selMenu = 4">Disponibilità servizio per regione</a></li>
         <br> <br> <br> <br> <br>
-        <li><a class="text-decoration-none" routerLink="/home">Esci</a></li>
+        <li class="panel-block"><a class="text-decoration-none" routerLink="/home">Esci</a></li>
       </ul>
     </div>
   </div>

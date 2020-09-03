@@ -34,6 +34,7 @@ export class PagamentoComponent implements OnInit {
 
   abbonamentoMagazzinoSottoscritto: AbbonamentoMagazzinoSottoscritto;
   abbonamentoSottoscritto: AbbonamentoSottoscritto;
+  spedizioneEffettuata: Spedizione;
 
   msg: string;
   errMsg: string;
@@ -60,7 +61,19 @@ export class PagamentoComponent implements OnInit {
   }
 
   private pagaSpedizione(){
-
+    this.msgW = "Attendi esito!!"
+    //console.log(JSON.stringify({"spedizione": this.spedizione, "cartaCredito": this.cartaCredito}))
+    this.spedizioneService.aggiungi(
+      this.accountingService.loggedUser(), {"spedizione": this.spedizione, "cartaCredito": this.cartaCredito}).subscribe(
+      response =>{
+        this.spedizioneEffettuata = response;
+        this.msg = "la spedizione numero "+this.spedizioneEffettuata.idSpedizione+" è stata registrata correttamente nei nostri sistemi"
+        this.msgW = null;
+      }, error => {
+        this.errMsg = error.error.message;
+        this.msgW = null;
+      }
+    )
 
   }
 

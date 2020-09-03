@@ -17,4 +17,8 @@ export class SpedizioneService {
     return this.httpClient.get<Spedizione>(`http://${this.server}:${this.port}/spedizione/ricerca_spedizione/${idSpedizione}`);
   }
 
+  aggiungi(idCliente: number, spedizioneCartaWrap){
+    return this.httpClient.post<Spedizione>(`http://${this.server}:${this.port}/spedizione/aggiungi_spedizione/${idCliente}`, spedizioneCartaWrap);
+  }
+
 }

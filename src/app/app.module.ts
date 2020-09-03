@@ -31,6 +31,10 @@ import { PagamentoComponent } from './components-sottoscrizione/pagamento/pagame
 import { RiepilogoComponent } from './components-sottoscrizione/riepilogo/riepilogo.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CreazioneSpedizioneComponent } from './components-servizi-offerti/creazione-spedizione/creazione-spedizione.component';
+import { AbbonamentiSottoscrittiComponent } from './components-dashboard/abbonamenti-sottoscritti/abbonamenti-sottoscritti.component';
+import { AbbonamentiMagazzinoSottoscrittiComponent } from './components-dashboard/abbonamenti-magazzino-sottoscritti/abbonamenti-magazzino-sottoscritti.component';
+import { AbbonamentoMagSottoscrComponent } from './components-dashboard/abbonamento-mag-sottoscr/abbonamento-mag-sottoscr.component';
+import { AbbonamentoSttoscrComponent } from './components-dashboard/abbonamento-sttoscr/abbonamento-sttoscr.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +63,11 @@ import { CreazioneSpedizioneComponent } from './components-servizi-offerti/creaz
     AbbonamentoMagazzinoComponent,
     PagamentoComponent,
     RiepilogoComponent,
-    CreazioneSpedizioneComponent
+    CreazioneSpedizioneComponent,
+    AbbonamentiSottoscrittiComponent,
+    AbbonamentiMagazzinoSottoscrittiComponent,
+    AbbonamentoMagSottoscrComponent,
+    AbbonamentoSttoscrComponent
   ],
   imports: [
     BrowserModule,

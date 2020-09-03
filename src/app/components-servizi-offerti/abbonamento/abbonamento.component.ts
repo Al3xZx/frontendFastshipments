@@ -24,7 +24,6 @@ export class AbbonamentoComponent implements OnInit {
   sottoscrivi() {
     if(!this.accountingService.isLogged()) this.errMsg = "è necessario essere registrato per sottoscrivere un abbonamento"
     else{
-      //sessionStorage.setItem("ID_ABBONAMENTO", this.abbonamento.idAbbonamento.toString());
       sessionStorage.setItem("ABBONAMENTO", JSON.stringify(this.abbonamento));
       this.router.navigate(["/riepilogoOrdine"]);
     }

@@ -1,0 +1,27 @@
+/* The sidebar menu */
+.sidenav {
+  background-color: lightgray;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  font-size: 20px;
+  color: dodgerblue;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: gray;
+}
+
+.titlePage{
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+
+p{
+  font-size: 20px;
+}

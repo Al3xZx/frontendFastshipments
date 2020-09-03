@@ -1,1 +1,58 @@
-<p>dashboard works!</p>
+<h1 class="mt-2 text-center">Dashboard</h1>
+
+<div class="columns mt-3 mb-6">
+
+  <div class="column is-one-quarter ml-2">
+    <div class="sidenav panel has-background-light">
+      <ul>
+
+        <li class="panel-block">
+<!--          <a (click)="selMenu = 0">Informazione utente</a>-->
+
+          <div class="box box-info">
+
+            <div class="box-body">
+              <div class="row">
+                <div class="col">
+                  <div> <img alt="User Pic" src="assets/images/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive"></div>
+                </div>
+                <div class="col">
+                  <h4 style="color:#00b1b1; text-decoration: none" class="text-center"><a (click)="selMenu = 0">Dashboard utente cod: {{cliente.idCliente}}</a></h4>
+                </div>
+              </div>
+
+              <div class="is-clearfix">
+                <hr style="margin:5px 0 5px 0;">
+              </div>
+              <div *ngIf="cliente.nome" >Nome: {{cliente.nome}}</div>
+              <div *ngIf="cliente.cognome">Cognome: {{cliente.cognome}}</div>
+              <div *ngIf="cliente.cf">CF: {{cliente.cf}}</div>
+              <div *ngIf="cliente.ragioneSociale">Ragione sociale: {{cliente.ragioneSociale}}</div>
+              <div *ngIf="cliente.pIva">Partita Iva: {{cliente.pIva}}</div>
+              <div>Telefono: {{cliente.telefono}}</div>
+              <div>Email: {{cliente.email}}</div>
+
+            </div> <!-- /.box-body -->
+          </div><!-- /.box -->
+
+        </li>
+
+        <li class="panel-block" ><a (click)="selMenu = 1">Abbonamenti sottoscritti</a></li>
+        <li class="panel-block" ><a (click)="selMenu = 2">Abbonamenti magazzino sottoscritti</a></li>
+        <li class="panel-block" ><a (click)="selMenu = 3">Prenota una Spedizione</a></li>
+        <br> <br> <br> <br> <br>
+        <li class="panel-block" ><a class="text-decoration-none" routerLink="/home">Esci</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="column ml-2 mr-2">
+    <h3 *ngIf="selMenu === 0" class="titlePage">Benvenuto Utente {{cliente.idCliente}}, questa è la tua area personale</h3>
+    <h3 *ngIf="selMenu === 1" class="titlePage">Abbonamenti sottoscritti</h3>
+    <app-abbonamenti-sottoscritti *ngIf="selMenu === 1" ></app-abbonamenti-sottoscritti>
+    <h3 *ngIf="selMenu === 2" class="titlePage">Abbonamenti magazzino sottoscritti</h3>
+    <app-abbonamenti-magazzino-sottoscritti *ngIf="selMenu === 2" ></app-abbonamenti-magazzino-sottoscritti>
+    <h3 *ngIf="selMenu === 3" class="titlePage">Prenota una Spedizione</h3>
+    <app-creazione-spedizione *ngIf="selMenu === 3"></app-creazione-spedizione>
+  </div>
+</div>

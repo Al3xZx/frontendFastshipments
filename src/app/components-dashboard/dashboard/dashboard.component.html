@@ -41,6 +41,7 @@
         <li class="panel-block" ><a (click)="selMenu = 2">Abbonamenti magazzino sottoscritti</a></li>
         <li class="panel-block" ><a (click)="selMenu = 3">Prenota una Spedizione</a></li>
         <li class="panel-block" ><a (click)="selMenu = 4">Merci di proprietà</a></li>
+        <li class="panel-block" ><a (click)="selMenu = 5">Spedizioni effettuate</a></li>
         <br> <br> <br> <br> <br>
         <li class="panel-block" ><a class="text-decoration-none" routerLink="/home">Esci</a></li>
       </ul>
@@ -57,5 +58,7 @@
     <app-creazione-spedizione *ngIf="selMenu === 3"></app-creazione-spedizione>
     <h3 *ngIf="selMenu === 4" class="titlePage">Merci di proprietà</h3>
     <app-elenco-all-merci *ngIf="selMenu === 4"></app-elenco-all-merci>
+    <h3 *ngIf="selMenu === 5" class="titlePage">Spedizioni effettuate</h3>
+    <app-spedizioni-effettuate *ngIf="selMenu === 5"></app-spedizioni-effettuate>
   </div>
 </div>

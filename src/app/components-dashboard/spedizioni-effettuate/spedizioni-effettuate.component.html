@@ -1,0 +1,33 @@
+
+<div class="mb-6 mt-6 ml-2 mr2"*ngIf="spedizioniEffettuate">
+  <div>
+    <ul class="list-group">
+      <div class="list-group-item list-group-item-action mt-3 mb-3" *ngFor="let spedizione of this.spedizioniEffettuate; let i = index" >
+        <h5>Spedizione numero: {{spedizione.idSpedizione}}</h5>
+        <div *ngIf="spedizione.stato !== 'DA_RITIRARE'" class="button is-info" (click)="ricerca(spedizione)"> more info</div>
+        <div *ngIf="spedizione.stato === 'DA_RITIRARE'"class="button is-info" (click)="moreInfo[i] = true"> more info</div>
+        <div *ngIf="moreInfo[i]">
+          <h5>Indirizzo destinazione{{prelevaIndirizzi(spedizione)}}</h5>
+          <div class="row">
+            <div class="col-md-3">
+              <h6>Regione: {{spedizione.indirizzoDestinazione.regione}}</h6>
+              <h6>Città: {{spedizione.indirizzoDestinazione.citta}}</h6>
+              <h6>Provincia: {{spedizione.indirizzoDestinazione.provincia}}</h6>
+              <h6>Via: {{spedizione.indirizzoDestinazione.via}}</h6>
+            </div>
+            <div class="col-md-3">
+              <h6>Civico: {{spedizione.indirizzoDestinazione.civico}}</h6>
+              <h6>Nome destinatario: {{spedizione.indirizzoDestinazione.nome}}</h6>
+              <h6 *ngIf="spedizione.indirizzoDestinazione.cognome">Cognome destinatario: {{spedizione.indirizzoDestinazione.cognome}}</h6>
+            </div>
+            <div class="col-md-3">
+              <h6>Volume: {{spedizione.volume.toFixed(2)}} m<sup>3</sup></h6>
+              <h6>Stato: {{spedizione.stato}}</h6>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </ul>
+  </div>
+</div>

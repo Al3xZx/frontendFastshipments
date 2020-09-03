@@ -40,6 +40,7 @@ import { ElencoMerciMagazzinoComponent } from './components-dashboard/elenco-mer
 import { SpedizioneMerciComponent } from './components-dashboard/spedizione-merci/spedizione-merci.component';
 import { ElencoAllMerciComponent } from './components-dashboard/elenco-all-merci/elenco-all-merci.component';
 import { RichiestaSpedizioneAbbonamentoComponent } from './components-dashboard/richiesta-spedizione-abbonamento/richiesta-spedizione-abbonamento.component';
+import { SpedizioniEffettuateComponent } from './components-dashboard/spedizioni-effettuate/spedizioni-effettuate.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,8 @@ import { RichiestaSpedizioneAbbonamentoComponent } from './components-dashboard/
     ElencoMerciMagazzinoComponent,
     SpedizioneMerciComponent,
     ElencoAllMerciComponent,
-    RichiestaSpedizioneAbbonamentoComponent
+    RichiestaSpedizioneAbbonamentoComponent,
+    SpedizioniEffettuateComponent
   ],
   imports: [
     BrowserModule,

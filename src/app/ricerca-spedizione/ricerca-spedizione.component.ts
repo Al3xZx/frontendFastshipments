@@ -19,7 +19,7 @@ export class RicercaSpedizioneComponent implements OnInit {
   }
 
   ricerca(){
-    console.log(this.codiceSpedizione)
+    //console.log(this.codiceSpedizione)
     sessionStorage.setItem("idSpedizione",this.codiceSpedizione);
     this.router.navigate(["/infoSpedizione"])
   }

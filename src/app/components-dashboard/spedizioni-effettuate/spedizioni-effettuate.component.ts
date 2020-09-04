@@ -45,7 +45,7 @@ export class SpedizioniEffettuateComponent implements OnInit {
 
   ricerca(spedizione: Spedizione){
     //console.log(this.codiceSpedizione)
-    sessionStorage.setItem("idSpedizione",spedizione.idSpedizione);
+    sessionStorage.setItem("idSpedizione",spedizione.idSpedizione.toString());
     this.router.navigate(["/infoSpedizione"])
   }
 }

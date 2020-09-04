@@ -1,8 +1,19 @@
 <div class="columns is-gapless is-multiline is-mobile" *ngIf="abbonamentoMagSottoscritto">
   <div class="column is-one-fifth"></div>
 
-  <div class="column">
-    <app-msg-err *ngIf="errMsg" [msg]="errMsg"></app-msg-err>
+  <div class="column" *ngIf="succMsg">
+    <div>
+      <app-msg-suc *ngIf="succMsg" [msg]="succMsg"></app-msg-suc>
+      <div class="button is-success" routerLink="/dashboard"> Dashboard</div>
+    </div>
+  </div>
+
+  <div class="column" *ngIf="!succMsg">
+
+    <div *ngIf="errMsg">
+      <app-msg-err [msg]="errMsg"></app-msg-err>
+      <div class="button is-success" (click)="errMsg = null"> ok!</div>
+    </div>
     <h4>Dati Merce</h4>
     <form class="mt-3">
 

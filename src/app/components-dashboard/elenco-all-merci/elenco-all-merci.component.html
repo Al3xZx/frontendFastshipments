@@ -4,6 +4,7 @@
       <li class="row list-group-item list-group-item-action mt-3 mb-3" *ngFor="let merce of this.merci; let i = index">
         <div class="col">Descrizione: {{merce.descrizione}}</div>
         <div class="col">Stato: {{merce.stato}}</div>
+        <div class="col" >Hub: {{prelevaIndirizzo(merce.abbonamentoMagazzinoSottoscritto.hub).regione}}</div>
         <div class="col">Quantità: {{merce.qta}}</div>
       </li>
     </ul>

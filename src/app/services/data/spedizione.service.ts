@@ -29,7 +29,7 @@ export class SpedizioneService {
     return this.httpClient.post<Spedizione>(`http://${this.server}:${this.port}/spedizione/spedizioneDaAbbonamento/${idAbbonamento}/${idCliente}`, spedizione);
   }
 
-  spedizioneEffettuate(idCliente: string){
+  spedizioneEffettuate(idCliente: number){
     return this.httpClient.get<Spedizione[]>(`http://${this.server}:${this.port}/spedizione/effettuate/${idCliente}`);
   }
 

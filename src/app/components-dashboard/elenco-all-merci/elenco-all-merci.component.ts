@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {AbbonamentoMagazzinoSottoscritto, Merce} from '../../support-class/ClassiSupporto';
+import {AbbonamentoMagazzinoSottoscritto, Hub, IndirizzoHub, Merce} from '../../support-class/ClassiSupporto';
 import {AbbonamentoMagazzinoService} from '../../services/data/abbonamento-magazzino.service';
 import {AccountingService} from '../../services/data/accounting.service';
 import {Router} from '@angular/router';
@@ -40,4 +40,9 @@ export class ElencoAllMerciComponent implements OnInit {
       )
   }
 
+  prelevaIndirizzo(h: Hub): IndirizzoHub{
+    var indirizzoHubS = h.indirizzo;
+    var arSplit = indirizzoHubS.split(/\s?[a-zA-Z]+:\s/);
+    return new IndirizzoHub(arSplit[1],arSplit[2],arSplit[3],arSplit[4],arSplit[5]);
+  }
 }

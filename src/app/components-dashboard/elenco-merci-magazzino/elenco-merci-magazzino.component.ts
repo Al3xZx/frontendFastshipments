@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {AbbonamentoMagazzinoSottoscritto, Merce} from '../../support-class/ClassiSupporto';
+import {AbbonamentoMagazzinoSottoscritto, Hub, IndirizzoHub, Merce} from '../../support-class/ClassiSupporto';
 import {AbbonamentoMagazzinoService} from '../../services/data/abbonamento-magazzino.service';
 import {AccountingService} from '../../services/data/accounting.service';
 import {Router} from '@angular/router';
@@ -79,16 +79,16 @@ export class ElencoMerciMagazzinoComponent implements OnInit {
     if(this.sel[i]) {
       this.sel[i] = false;
       this.selezionate --;
-      console.log(this.merci[i].idMerce+" "+this.merci[i].descrizione+" deselezionata")
+      //console.log(this.merci[i].idMerce+" "+this.merci[i].descrizione+" deselezionata")
     }
     else {
       this.sel[i] = true;
       this.selezionate++;
-      console.log(this.merci[i].idMerce+" "+this.merci[i].descrizione+" selezionata")
+      //console.log(this.merci[i].idMerce+" "+this.merci[i].descrizione+" selezionata")
     }
     //this.verificaSelezioni();
-    console.log(this.sel)
-    console.log("selezionate: "+ this.selezionate)
+    //console.log(this.sel)
+    //console.log("selezionate: "+ this.selezionate)
   }
 
   // verificaSelezioni() :boolean{
@@ -101,4 +101,10 @@ export class ElencoMerciMagazzinoComponent implements OnInit {
   //   this.continua = false;
   //   return false;
   // }
+
+  prelevaIndirizzo(h: Hub): IndirizzoHub{
+    var indirizzoHubS = h.indirizzo;
+    var arSplit = indirizzoHubS.split(/\s?[a-zA-Z]+:\s/);
+    return new IndirizzoHub(arSplit[1],arSplit[2],arSplit[3],arSplit[4],arSplit[5]);
+  }
 }
